@@ -1,0 +1,5 @@
+- name: macOS hosts with uptime over 30 days
+  description: macOS hosts that haven't restarted in more than 30 days
+  query: SELECT 1 FROM uptime WHERE total_seconds > 30 * 86400;
+  label_membership_type: dynamic
+  platform: darwin
