@@ -96,6 +96,21 @@ org_settings:
     #       - "💻 Workstations"
     #       - "📱🔐 Personal mobile devices"
 
+  webhook_settings:
+    ###########################################################
+    # Fleet POSTs each new activity (e.g. an admin editing a
+    # policy or running a script) to this URL.
+    #
+    # Note: The URL is a repository "secret" because anyone
+    # who has it can read what Fleet sends to it.
+    #
+    # Read more:
+    #   • https://fleetdm.com/docs/configuration/yaml-files#activities-webhook
+    ###########################################################
+    activities_webhook:
+      enable_activities_webhook: true
+      destination_url: $FLEET_ACTIVITIES_WEBHOOK_URL
+
 controls:
   ###########################################################
   # Uncomment when you are ready to migrate Macs to Fleet
