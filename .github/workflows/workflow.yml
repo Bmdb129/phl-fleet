@@ -97,3 +97,12 @@ jobs:
           # or that never expires.)
           ###########################################################
           FLEET_API_TOKEN: ${{ secrets.FLEET_API_TOKEN }}
+
+          ###########################################################
+          # The URL Fleet sends activity webhooks to (see
+          # `activities_webhook` in default.yml).
+          #
+          # Kept as a repository secret because anyone who has
+          # the URL can read what Fleet sends to it.
+          ###########################################################
+          FLEET_ACTIVITIES_WEBHOOK_URL: ${{ secrets.FLEET_ACTIVITIES_WEBHOOK_URL }}
