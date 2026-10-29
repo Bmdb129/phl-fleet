@@ -69,6 +69,11 @@ controls:
     configuration_profiles:
       - paths: ../platforms/macos/declaration-profiles/*.json
       - paths: ../platforms/macos/configuration-profiles/*.mobileconfig
+      # Label-scoped profiles live in scoped/ so the glob above doesn't
+      # also apply them to every host in this fleet.
+      - path: ../platforms/macos/configuration-profiles/scoped/disable-bluetooth-file-sharing.mobileconfig
+        labels_include_any:
+          - "Department - Engineering"
   windows_settings:
     configuration_profiles:
       - paths: ../platforms/windows/configuration-profiles/*.xml
